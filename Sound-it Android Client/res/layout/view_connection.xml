@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/view_connection_text_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/view_connection_info_head"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/labels"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/view_connection_text_ip"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_connection_text_head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/view_connection_info_text_ip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/labels"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:id="@+id/view_connection_layout_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_connection_text_ip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/view_connection_text_ip1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:maxLength="3" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/view_connection_text_ip2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <EditText
+            android:id="@+id/view_connection_text_ip3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <EditText
+            android:id="@+id/view_connection_text_ip4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:maxLength="3" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/view_connection_text_port"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_connection_layout_head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/view_connection_info_text_port"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/labels"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <EditText
+        android:id="@+id/view_connection_text_port_value"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_connection_text_port"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:inputType="number" >
+    </EditText>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_connection_text_port_value"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/view_connection_content_descriptor_connect"
+        android:onClick="buttonConnectOnClick"
+        android:src="@drawable/main_button_connect" />
+
+</RelativeLayout>

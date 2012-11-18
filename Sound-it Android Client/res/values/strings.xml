@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sound-It</string>
+    <string name="view_connection_info_head">Server info</string>
+    <string name="view_connection_info_text_ip">IP:</string>
+    <string name="view_connection_info_text_port">Port:</string>
+    <string name="view_connection_button_text_connect">Connect</string>
+    <string name="view_connection_default_ip">192.168.1.135</string>
+    <string name="view_connection_default_port">Connect</string>
+    <string name="view_connection_content_descriptor_connect">Connect</string>
+    <string name="view_connection_message_empty_input">All fields must have a value</string>
+    <string name="view_events_info_text_instrument">Instrument:</string>
+
+</resources>

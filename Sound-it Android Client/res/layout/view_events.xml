@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_events_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background" >
+
+    <TextView
+        android:id="@+id/view_events_text_instrument_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/view_events_info_text_instrument"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/labels"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <EditText
+        android:id="@+id/view_events_text_instrument"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_events_text_instrument_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:inputType="number"
+        android:maxLength="5" />
+
+    <TextView
+        android:id="@+id/view_events_text_channel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_events_text_instrument"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/labels"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <SeekBar
+        android:id="@+id/view_events_seekbar_channel"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/view_events_text_channel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:max="16" />
+
+</RelativeLayout>
