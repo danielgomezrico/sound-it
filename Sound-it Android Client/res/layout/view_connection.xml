@@ -20,27 +20,60 @@
         android:typeface="serif" />
 
     <TextView
-        android:id="@+id/view_connection_text_ip"
-        android:layout_width="35dp"
+        android:id="@+id/view_connection_text_ip_info"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/view_connection_text_head"
         android:layout_centerHorizontal="true"
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
-        android:text="@string/view_connection_info_text_ip"
+        android:text="@string/view_connection_info_text_ip_info"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/labels"
         android:textStyle="bold"
         android:typeface="serif" />
 
-    <LinearLayout
-        android:id="@+id/view_connection_layout_head"
+    <RadioGroup
+        android:id="@+id/view_connection_layout_ip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view_connection_text_ip"
+        android:layout_below="@id/view_connection_text_ip_info"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/view_connection_check_ip_auto"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/view_connection_info_text_ip_auto"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/labels"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <RadioButton
+            android:id="@+id/view_connection_check_ip_manual"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/view_connection_info_text_ip_manual"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/labels"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/view_connection_layout_ip_values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_connection_layout_ip"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:visibility="gone" >
 
         <EditText
             android:id="@+id/view_connection_text_ip1"
@@ -80,7 +113,7 @@
         android:id="@+id/view_connection_text_port"
         android:layout_width="55dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view_connection_layout_head"
+        android:layout_below="@id/view_connection_layout_ip_values"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/view_connection_info_text_port"

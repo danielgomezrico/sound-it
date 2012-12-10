@@ -19,21 +19,25 @@ public final class R {
         public static final int main_button_connect=0x7f020002;
     }
     public static final class id {
-        public static final int imageView1=0x7f070009;
-        public static final int view_connection_layout_head=0x7f070002;
+        public static final int imageView1=0x7f07000c;
+        public static final int view_connection_check_ip_auto=0x7f070003;
+        public static final int view_connection_check_ip_manual=0x7f070004;
+        public static final int view_connection_layout_ip=0x7f070002;
+        public static final int view_connection_layout_ip_values=0x7f070005;
         public static final int view_connection_text_head=0x7f070000;
-        public static final int view_connection_text_ip=0x7f070001;
-        public static final int view_connection_text_ip1=0x7f070003;
-        public static final int view_connection_text_ip2=0x7f070004;
-        public static final int view_connection_text_ip3=0x7f070005;
-        public static final int view_connection_text_ip4=0x7f070006;
-        public static final int view_connection_text_port=0x7f070007;
-        public static final int view_connection_text_port_value=0x7f070008;
-        public static final int view_events_layout_main=0x7f07000a;
-        public static final int view_events_seekbar_channel=0x7f07000e;
-        public static final int view_events_text_channel=0x7f07000d;
-        public static final int view_events_text_instrument=0x7f07000c;
-        public static final int view_events_text_instrument_info=0x7f07000b;
+        public static final int view_connection_text_ip1=0x7f070006;
+        public static final int view_connection_text_ip2=0x7f070007;
+        public static final int view_connection_text_ip3=0x7f070008;
+        public static final int view_connection_text_ip4=0x7f070009;
+        public static final int view_connection_text_ip_info=0x7f070001;
+        public static final int view_connection_text_port=0x7f07000a;
+        public static final int view_connection_text_port_value=0x7f07000b;
+        public static final int view_events_checkbox_repeater=0x7f070012;
+        public static final int view_events_layout_main=0x7f07000d;
+        public static final int view_events_spinner_channel=0x7f07000f;
+        public static final int view_events_spinner_instrument=0x7f070011;
+        public static final int view_events_text_channel=0x7f07000e;
+        public static final int view_events_text_instrument_info=0x7f070010;
     }
     public static final class integer {
         public static final int view_connection_default_port=0x7f050000;
@@ -44,14 +48,21 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f060000;
-        public static final int view_connection_button_text_connect=0x7f060004;
-        public static final int view_connection_content_descriptor_connect=0x7f060007;
-        public static final int view_connection_default_ip=0x7f060005;
-        public static final int view_connection_default_port=0x7f060006;
-        public static final int view_connection_info_head=0x7f060001;
-        public static final int view_connection_info_text_ip=0x7f060002;
-        public static final int view_connection_info_text_port=0x7f060003;
-        public static final int view_connection_message_empty_input=0x7f060008;
-        public static final int view_events_info_text_instrument=0x7f060009;
+        public static final int view_connection_button_text_connect=0x7f060007;
+        public static final int view_connection_content_descriptor_connect=0x7f06000a;
+        public static final int view_connection_default_ip=0x7f060008;
+        public static final int view_connection_default_port=0x7f060009;
+        public static final int view_connection_info_head=0x7f060002;
+        public static final int view_connection_info_text_ip_auto=0x7f060005;
+        public static final int view_connection_info_text_ip_info=0x7f060003;
+        public static final int view_connection_info_text_ip_manual=0x7f060004;
+        public static final int view_connection_info_text_port=0x7f060006;
+        public static final int view_connection_ip_broadcast=0x7f060001;
+        public static final int view_connection_message_empty_input=0x7f06000b;
+        public static final int view_events_check_repeater=0x7f060010;
+        public static final int view_events_info_text_channel=0x7f06000d;
+        public static final int view_events_info_text_instrument=0x7f06000c;
+        public static final int view_events_spinner_channels_prompt=0x7f06000e;
+        public static final int view_events_spinner_instruments_prompt=0x7f06000f;
     }
 }

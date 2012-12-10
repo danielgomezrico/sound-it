@@ -2,8 +2,11 @@
 <resources>
 
     <string name="app_name">Sound-It</string>
+    <string name="view_connection_ip_broadcast">255.255.255.255</string>
     <string name="view_connection_info_head">Server info</string>
-    <string name="view_connection_info_text_ip">IP:</string>
+    <string name="view_connection_info_text_ip_info">IP</string>
+    <string name="view_connection_info_text_ip_manual">Manual</string>
+    <string name="view_connection_info_text_ip_auto">Auto</string>
     <string name="view_connection_info_text_port">Port:</string>
     <string name="view_connection_button_text_connect">Connect</string>
     <string name="view_connection_default_ip">192.168.1.135</string>
@@ -11,5 +14,9 @@
     <string name="view_connection_content_descriptor_connect">Connect</string>
     <string name="view_connection_message_empty_input">All fields must have a value</string>
     <string name="view_events_info_text_instrument">Instrument:</string>
+    <string name="view_events_info_text_channel">Channel:</string>
+    <string name="view_events_spinner_channels_prompt">Select a channel:</string>
+    <string name="view_events_spinner_instruments_prompt">Select an instrument:</string>
+    <string name="view_events_check_repeater">Repeater enabled</string>
 
 </resources>

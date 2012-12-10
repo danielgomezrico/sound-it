@@ -4,6 +4,8 @@
  */
 package com.makingiants.model.managers;
 
+import java.io.IOException;
+
 import javax.sound.midi.InvalidMidiDataException;
 
 /**
@@ -17,6 +19,7 @@ public class MessageManager {
 	// ---------------------------------------------
 	
 	private final SoundPlayer player;
+	private SerialManager serialManager;
 	
 	private static MessageManager instance;
 	
@@ -27,6 +30,12 @@ public class MessageManager {
 	private MessageManager() {
 		player = new SoundPlayer();
 		
+		try {
+			serialManager = new SerialManager();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static MessageManager getInstance() {
@@ -55,6 +64,26 @@ public class MessageManager {
 				player.play(val, channel, volume, left_pressed);
 			} catch (final InvalidMidiDataException e) {
 				e.printStackTrace();
+			}
+			
+			if (val > 3) {
+				try {
+					serialManager.send(3);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else if (val < -3) {
+				try {
+					serialManager.send(1);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else {
+				try {
+					serialManager.send(2);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 			
 		} else {

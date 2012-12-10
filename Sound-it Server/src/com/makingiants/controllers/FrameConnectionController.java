@@ -41,6 +41,7 @@ public class FrameConnectionController implements ActionListener {
 		frame.buttonStart.setText("Stop");
 		frame.textfieldPort.setEditable(false);
 		
+		// Show and send instruments
 		final DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Instruments");
 		final String[] instruments = MessageManager.getInstance().getSoundPlayer()

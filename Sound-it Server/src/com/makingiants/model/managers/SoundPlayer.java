@@ -30,7 +30,6 @@ public class SoundPlayer {
 			message = new ShortMessage();
 			
 			receiver = synth.getReceiver();
-			getAvaliableInstruments();
 		} catch (final MidiUnavailableException e) {
 			e.printStackTrace();
 		}

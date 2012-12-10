@@ -6,11 +6,33 @@
     android:background="@drawable/main_background" >
 
     <TextView
-        android:id="@+id/view_events_text_instrument_info"
+        android:id="@+id/view_events_text_channel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/view_events_info_text_channel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/labels"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <Spinner
+        android:id="@+id/view_events_spinner_channel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_events_text_channel"
+        android:layout_centerHorizontal="true"
+        android:prompt="@string/view_events_spinner_channels_prompt" />
+
+    <TextView
+        android:id="@+id/view_events_text_instrument_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_events_spinner_channel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:text="@string/view_events_info_text_instrument"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/labels"
@@ -18,37 +40,24 @@
         android:textStyle="bold"
         android:typeface="serif" />
 
-    <EditText
-        android:id="@+id/view_events_text_instrument"
-        android:layout_width="280dp"
+    <Spinner
+        android:id="@+id/view_events_spinner_instrument"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/view_events_text_instrument_info"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
-        android:inputType="number"
-        android:maxLength="5" />
+        android:prompt="@string/view_events_spinner_instruments_prompt" />
 
-    <TextView
-        android:id="@+id/view_events_text_channel"
+    <CheckBox
+        android:id="@+id/view_events_checkbox_repeater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view_events_text_instrument"
+        android:layout_below="@+id/view_events_spinner_instrument"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/labels"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
-
-    <SeekBar
-        android:id="@+id/view_events_seekbar_channel"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/view_events_text_channel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:max="16" />
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/view_events_check_repeater" />
 
 </RelativeLayout>
