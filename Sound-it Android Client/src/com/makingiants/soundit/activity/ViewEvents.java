@@ -107,19 +107,14 @@ public class ViewEvents extends Activity implements SensorEventListener, OnItemS
 		
 		final float ax = event.values[0];
 		float ay = event.values[1];
-		//float az = event.values[2];
+		float az = event.values[2];
 		
 		if (ax > 0.7 || ax < -0.7) {
 			final int axInt = (int) ax;
 			
-			if (ay < 0) {
-				ay *= -1;
-			}
-			
-			final int volume = MessageSender.MAX_VOLUME - (int) ay * 10;
-			
-			if (lastAccX != axInt || repeatedFilterDisabled) {
-				messageSender.sendMidiValueMessage(axInt, 0, volume, true);
+			if (repeatedFilterDisabled || lastAccX != axInt) {
+				
+				messageSender.sendMidiValueMessage(axInt, (int) ay, (int) az, channel, true);
 			}
 			
 			lastAccX = axInt;
@@ -160,7 +155,6 @@ public class ViewEvents extends Activity implements SensorEventListener, OnItemS
 		} else {
 			instrument = Integer.valueOf(adapter.getItemAtPosition(pos).toString());
 		}
-		Log.d("asd", channel + " " + instrument);
 		//channel = ?
 		messageSender.sendMidiInstrumentMessage(instrument, channel);
 		

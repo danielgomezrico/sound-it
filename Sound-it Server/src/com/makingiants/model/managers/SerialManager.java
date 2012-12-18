@@ -61,6 +61,12 @@ public class SerialManager {
 		
 	}
 	
+	public void send(String value) throws IOException {
+		output.write((value + "\n").getBytes());
+		output.flush();
+		
+	}
+	
 	public void close() throws IOException {
 		output.close();
 	}

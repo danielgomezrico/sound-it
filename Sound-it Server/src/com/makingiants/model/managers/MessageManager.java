@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.makingiants.model.managers;
 
 import java.io.IOException;
 
 import javax.sound.midi.InvalidMidiDataException;
 
-/**
- *
- * @author danielgomezrico
- */
 public class MessageManager {
 	
 	// ---------------------------------------------
@@ -49,41 +41,76 @@ public class MessageManager {
 	// ---------------------------------------------
 	// Message managment methods
 	// ---------------------------------------------
-	
+	int level = 1;
+
 	public void manage(final String message) {
 		if (message.charAt(0) == 'v') {
 			
 			final String[] split = message.split(" ");
-			final int val = Integer.valueOf(split[1]);
-			final int channel = Integer.valueOf(split[2]);//0-16
-			final int volume = Integer.valueOf(split[3]);//0-128
+			final int accX = Integer.valueOf(split[1]);
+			int accY = Integer.valueOf(split[2]);//0-128
+			int accZ = Integer.valueOf(split[3]);//0-128
+			final int channel = Integer.valueOf(split[4]);//0-16
+			
+			
 			// TODO: get when should I left pressed or not from message
-			final boolean left_pressed = false;//Boolean.valueOf(split[4]);
+			final boolean pressed = false;//Boolean.valueOf(split[4]);
 			
 			try {
-				player.play(val, channel, volume, left_pressed);
-			} catch (final InvalidMidiDataException e) {
+				int led;
+				
+				if(accZ < -7){
+					if(level < 2){
+						level++;
+					}
+				}
+				else if(accZ > 7){
+					if(level > 0){
+						level--;
+					}
+				}
+				
+				if (accY > 1) {
+					if (accX > 3) {
+						led = 0;
+					} else if (accX < -3) {
+						led = 2;
+					} else {
+						led = 1;
+					}
+					
+				} else if (accY < -1) {
+					if (accX > 3) {
+						led = 6;
+					} else if (accX < -3) {
+						led = 8;
+					} else {
+						led = 7;
+					}
+				} else {
+					if (accX > 3) {
+						led = 3;
+					} else if (accX < -3) {
+						led = 5;
+					} else {
+						led = 4;
+					}
+				}
+				
+				serialManager.send(level+""+led);
+				
+				
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			
-			if (val > 3) {
-				try {
-					serialManager.send(3);
-				} catch (IOException e) {
-					e.printStackTrace();
+			try {
+				if (accY < 0) {
+					accY *= -1;
 				}
-			} else if (val < -3) {
-				try {
-					serialManager.send(1);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			} else {
-				try {
-					serialManager.send(2);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				player.play(accX, channel, SoundPlayer.MAX_VOLUME - (accY * 10), pressed);
+			} catch (final InvalidMidiDataException e) {
+				e.printStackTrace();
 			}
 			
 		} else {

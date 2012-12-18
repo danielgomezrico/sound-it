@@ -8,8 +8,6 @@ import com.makingiants.soundit.model.udp.Client;
 
 public class MessageSender {
 	
-	public final static int MAX_VOLUME = 120;
-	
 	// ---------------------------------------------
 	// Attributes
 	// ---------------------------------------------
@@ -41,9 +39,9 @@ public class MessageSender {
 	// Message methods
 	// ---------------------------------------------
 	
-	public void sendMidiValueMessage(final int value, final int channel, final int volume, final boolean left_pressed) {
+	public void sendMidiValueMessage(final int accX, final int accY, final int accZ, final int channel, final boolean left_pressed) {
 		//TODO: use left_pressed in last parameter
-		client.send(String.format("v %d %d %d", value, channel, volume));
+		client.send(String.format("v %d %d %d %d", accX, accY, accZ, channel));
 	}
 	
 	public void sendMidiInstrumentMessage(final int instrument, final int channel) {

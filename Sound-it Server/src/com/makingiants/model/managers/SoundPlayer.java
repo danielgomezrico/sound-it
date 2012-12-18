@@ -12,7 +12,7 @@ import javax.sound.midi.Synthesizer;
 public class SoundPlayer {
 	private final static int MIN_NOTE = 40;
 	private final static int MAX_NOTE = 90;
-	private final static int MAX_VOLUME = 128;
+	public final static int MAX_VOLUME = 120;
 	private final static int MIN_VOLUME = 0;
 	
 	private int sound_frecuency = 60;
@@ -43,10 +43,10 @@ public class SoundPlayer {
 	 * @param frecuency_offset
 	 * @param channel
 	 * @param volume
-	 * @param left_pressed
+	 * @param pressed
 	 * @throws InvalidMidiDataException
 	 */
-	public void play(final int frecuency_offset, final int channel, int volume, boolean left_pressed)
+	public void play(final int frecuency_offset, final int channel, int volume, boolean pressed)
 	        throws InvalidMidiDataException {
 		// Calculate new sound
 		sound_frecuency = 60 + frecuency_offset * 2;
@@ -54,15 +54,13 @@ public class SoundPlayer {
 		// Check Limits
 		if (sound_frecuency > MAX_NOTE) {
 			sound_frecuency = MAX_NOTE;
-		}
-		if (sound_frecuency < MIN_NOTE) {
+		} else if (sound_frecuency < MIN_NOTE) {
 			sound_frecuency = MIN_NOTE;
 		}
 		
 		if (volume > MAX_VOLUME) {
 			volume = MAX_VOLUME;
-		}
-		if (volume < MIN_VOLUME) {
+		} else if (volume < MIN_VOLUME) {
 			volume = MIN_VOLUME;
 		}
 		
@@ -70,7 +68,7 @@ public class SoundPlayer {
 		message.setMessage(ShortMessage.NOTE_ON, channel, sound_frecuency, volume);
 		receiver.send(message, -1); // -1 means no time stamp
 		
-		if (left_pressed) {
+		if (pressed) {
 			try {
 				Thread.sleep(1000);
 			} catch (Exception ex) {
